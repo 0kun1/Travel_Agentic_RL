@@ -1,0 +1,47 @@
+# =========================
+# Basic project dependencies
+# =========================
+
+python-dotenv==1.2.2
+openai==2.32.0
+tqdm
+numpy
+pydantic
+
+# =========================
+# JSON parsing / repair
+# =========================
+
+json_repair==0.59.9
+json5
+
+# =========================
+# HTTP / Web tools
+# =========================
+
+httpx==0.28.1
+beautifulsoup4==4.13.4
+tavily-python==0.7.24
+firecrawl-py==4.26.0
+langdetect==1.0.9
+
+# =========================
+# Tokenizer / model helper
+# =========================
+
+tiktoken==0.12.0
+transformers
+
+# =========================
+# Agent framework
+# =========================
+
+qwen-agent==0.0.34
+soundfile
+python-dateutil
+
+# =========================
+# Model download helper
+# =========================
+
+modelscope==1.36.0

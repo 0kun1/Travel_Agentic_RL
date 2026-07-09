@@ -1,0 +1,53 @@
+# ===============================
+# Qwen3-4B Agent SFT LoRA 配置
+# ===============================
+
+# 基座模型
+model: ./pretrained/Qwen/Qwen3-4B-Instruct-2507
+
+# 训练数据
+dataset: ./data/final/sft_train.jsonl
+val_dataset: ./data/final/sft_val.jsonl
+
+# Qwen3 模板
+# 如果你的 ms-swift 版本不支持 qwen3_nothinking，报错后再删掉这一行
+template: qwen3_nothinking
+
+# 微调方式：LoRA SFT
+tuner_type: lora
+lora_rank: 128
+lora_alpha: 256
+target_modules: all-linear
+
+# 训练轮数与学习率
+num_train_epochs: 2
+learning_rate: 8e-6
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+weight_decay: 0.1
+optim: adamw_torch_fused
+
+# 长上下文与精度
+max_length: 32768
+torch_dtype: bfloat16
+
+# batch 配置
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+
+# dataloader
+dataloader_num_workers: 8
+
+# 日志、验证、保存
+save_steps: 200
+eval_steps: 50
+logging_steps: 5
+logging_first_step: true
+
+# W&B
+report_to: wandb
+run_name: qwen3_4b_travel_sft_lora
+
+# 输出目录
+output_dir: ./saved/output/qwen3_4b_sft_lora

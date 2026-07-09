@@ -1,0 +1,126 @@
+# =========================================================
+# Python cache / build files
+# =========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# =========================================================
+# Jupyter / notebook checkpoints
+# =========================================================
+.ipynb_checkpoints/
+
+# =========================================================
+# Environment variables / secrets / API keys
+# =========================================================
+.env
+.env.*
+!.env.example
+
+*.key
+*.pem
+*.secret
+*.credentials
+secrets/
+credentials/
+
+# =========================================================
+# Logs / experiment tracking
+# =========================================================
+*.log
+logs/
+wandb/
+runs/
+tensorboard/
+events.out.tfevents.*
+
+# =========================================================
+# Model weights / checkpoints / adapters
+# =========================================================
+pretrained/
+saved/
+
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+*.onnx
+
+# =========================================================
+# Third-party training framework
+# Do not upload the full local ms-swift source.
+# If you modified custom plugins, copy them to plugins/ before uploading.
+# =========================================================
+ms-swift/
+
+# =========================================================
+# Raw / intermediate / generated datasets
+# =========================================================
+data/raw/
+data/clean/
+data/final/
+data/swift/
+data/train_expansion.jsonl
+data/*.jsonl
+data/**/*.jsonl
+
+# Keep small public examples if needed
+!examples/
+!examples/**
+!examples/*.json
+!examples/*.jsonl
+
+# =========================================================
+# Rollout / distillation / teacher generated data
+# =========================================================
+saved/train_expansion/
+teacher_results/
+test_output/
+
+# =========================================================
+# Inference outputs
+# Ignore full raw outputs, but keep selected summaries and samples.
+# =========================================================
+outputs/*
+!outputs/README.md
+!outputs/experiment_summary.md
+!outputs/*summary*.json
+!outputs/*stats*.json
+!outputs/sample_*.jsonl
+
+# =========================================================
+# Archives / compressed files
+# =========================================================
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# =========================================================
+# OS / editor files
+# =========================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================================================
+# Temporary files
+# =========================================================
+tmp/
+temp/
+.cache/
+*.tmp
+*.bak
+*.swp
+*.swo
